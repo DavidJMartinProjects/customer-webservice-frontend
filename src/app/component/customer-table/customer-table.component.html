@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
 <div class="container">
 
     <div class="d-flex flex-row-reverse bd-highlight mb-2">
@@ -13,12 +15,13 @@
     <table class="table table-hover">
         <thead class="table-dark">
             <tr>
-                <th>Image</th>
+                <th></th>
                 <th>Id</th>
-                <th>Lname</th>
-                <th>Sname</th>
+                <th>Fname</th>
+                <th>Surname</th>
                 <th>City</th>
                 <th>Country</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +35,18 @@
                 <td class="align-middle">{{ customer.lastName }}</td>
                 <td class="align-middle">{{ customer.city }}</td>
                 <td class="align-middle">{{ customer.country }}</td>
+                <td class="align-middle">
+                    <span>
+                        <button type="button" class="btn btn-outline-dark btn-sm custom-round">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                        <span class="mx-1">
+                            <button type="button" class="btn btn-outline-danger btn-sm custom-round">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    </span>
+                </td>
             </tr>
         </tbody>
     </table>

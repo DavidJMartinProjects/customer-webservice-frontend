@@ -7,16 +7,15 @@ import { CustomerTableComponent } from './component/customer-table/customer-tabl
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerTableComponent,
+    CustomerTableComponent
   ],
   imports: [
     NgxPaginationModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule    
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
