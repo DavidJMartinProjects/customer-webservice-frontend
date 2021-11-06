@@ -10,7 +10,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerTableComponent
+    CustomerTableComponent    
   ],
   imports: [
     NgxPaginationModule,

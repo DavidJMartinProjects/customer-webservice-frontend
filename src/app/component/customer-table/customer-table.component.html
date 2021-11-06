@@ -16,12 +16,12 @@
         <thead class="table-dark">
             <tr>
                 <th></th>
-                <th>Id</th>
-                <th>Fname</th>
-                <th>Surname</th>
-                <th>City</th>
-                <th>Country</th>
-                <th>Action</th>
+                <th (click)="sort('id')">Id&nbsp;<i class="fa fa-sort"></i></th>
+                <th (click)="sort('firstName')">Fname&nbsp;<i class="fa fa-sort"></i></th>
+                <th (click)="sort('lastName')">Surname&nbsp;<i class="fa fa-sort"></i></th>
+                <th (click)="sort('city')">City&nbsp;<i class="fa fa-sort"></i></th>
+                <th (click)="sort('country')">Country&nbsp;<i class="fa fa-sort"></i></th>
+                <th (click)="sort('action')">Action&nbsp;<i class="fa fa-sort"></i></th>
             </tr>
         </thead>
         <tbody>

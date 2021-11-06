@@ -18,14 +18,14 @@ export class CustomerTableComponent implements OnInit {
   tableSizes = [5, 10, 15, 20];
   tableSize: any = this.tableSizes[0];
 
-  constructor(private customerService: CustomerService, private paginate: NgxPaginationModule ) { }
+  constructor(private customerService: CustomerService, private paginate: NgxPaginationModule) { }
 
   ngOnInit(): void {
     this.fetchCustomers();
   }
 
   fetchCustomers() {
-    this.customerService.getCustomerPage(this.pageNumber, this.tableSize).subscribe(
+    this.customerService.getCustomerPage(this.pageNumber, this.tableSize, this.sortKey, this.sortOrder).subscribe(
       data => {        
         this.customers = data.customers;
         this.totalElements = data.totalElements;
@@ -46,6 +46,22 @@ export class CustomerTableComponent implements OnInit {
 
   pageChanged(event: any): void {
     this.pageNumber = event;
+    this.fetchCustomers();
+  }
+
+  sortKey:string = 'id';
+  sortOrder:string = 'ASC';
+  reverse:boolean = false;
+
+  sort(key:string) {
+    console.log("sort clicked.");
+    this.sortKey = key;
+    this.reverse = !this.reverse;
+    if(this.reverse) {
+      this.sortOrder = 'DESC'
+    } else {
+      this.sortOrder = 'ASC'
+    }
     this.fetchCustomers();
   }
 
