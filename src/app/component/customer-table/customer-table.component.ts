@@ -25,7 +25,7 @@ export class CustomerTableComponent implements OnInit {
   }
 
   fetchCustomers() {
-    this.customerService.getCustomerPage(this.pageNumber, this.tableSize, this.sortKey, this.sortOrder).subscribe(
+    this.customerService.getCustomerPage(this.pageNumber, this.tableSize, this.sortKey, this.sortDirection).subscribe(
       data => {        
         this.customers = data.customers;
         this.totalElements = data.totalElements;
@@ -50,17 +50,16 @@ export class CustomerTableComponent implements OnInit {
   }
 
   sortKey:string = 'id';
-  sortOrder:string = 'ASC';
+  sortDirection:string = 'ASC';
   reverse:boolean = false;
 
-  sort(key:string) {
-    console.log("sort clicked.");
+  sort(key:string) {    
     this.sortKey = key;
     this.reverse = !this.reverse;
     if(this.reverse) {
-      this.sortOrder = 'DESC'
+      this.sortDirection = 'DESC'
     } else {
-      this.sortOrder = 'ASC'
+      this.sortDirection = 'ASC'
     }
     this.fetchCustomers();
   }
