@@ -28,7 +28,7 @@
             <tr *ngFor="let customer of customers | paginate: { 
                     itemsPerPage: tableSize,
                     currentPage: pageNumber,
-                    totalItems: totalElements }">
+                    totalItems: totalElements }; let i = index">
                 <td class="align-middle"><img src="{{ customer.image }}" height="50"></td>
                 <td class="align-middle">{{ customer.id }}</td>
                 <td class="align-middle">{{ customer.firstName }}</td>
@@ -41,7 +41,7 @@
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </button>
                         <span class="mx-1">
-                            <button type="button" class="btn btn-outline-danger btn-sm custom-round">
+                            <button type="button" id="{{customer.id}}" (click)="deleteById(customer.id)" class="btn btn-outline-danger btn-sm custom-round">
                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                             </button>
                         </span>

@@ -7,17 +7,25 @@ import { CustomerTableComponent } from './component/customer-table/customer-tabl
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerTableComponent    
+    CustomerTableComponent,
+    ConfirmationDialogComponent    
   ],
   imports: [
     NgxPaginationModule,
     BrowserModule,
-    HttpClientModule    
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [CustomerService],
+  entryComponents: [ConfirmationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
