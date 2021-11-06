@@ -2,13 +2,13 @@
 
     <div class="d-flex flex-row-reverse bd-highlight mb-2">
         <div class="p-2 bd-highlight">
-          <select (change)="onTableSizeChange($event)" class="custom-select">
-            <option *ngFor="let tableSize of tableSizes" [value]="tableSize">
-              {{ tableSize }}
-            </option>
-          </select>
+            <select (change)="onTableSizeChange($event)" class="custom-select">
+                <option *ngFor="let tableSize of tableSizes" [value]="tableSize">
+                    {{ tableSize }}
+                </option>
+            </select>
         </div>
-      </div>
+    </div>
 
     <table class="table table-hover">
         <thead class="table-dark">
@@ -37,9 +37,8 @@
     </table>
 
     <div class="d-flex justify-content-center">
-        <pagination-controls 
-            (pageChange)="pageChanged($event)">
+        <pagination-controls (pageChange)="pageChanged($event)">
         </pagination-controls>
-      </div>
+    </div>
+    
 </div>
-

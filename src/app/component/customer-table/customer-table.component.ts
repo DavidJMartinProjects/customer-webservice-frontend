@@ -1,6 +1,5 @@
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CustomerService } from './../../service/customer.service';
-import { CustomerPage } from './../../model/customer-page.model';
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/model/customer.model';
 
