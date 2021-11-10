@@ -54,7 +54,6 @@ export class CustomerTableComponent implements OnInit {
   sortKey: string = 'id';
   sortDirection: string = 'ASC';
   reverse: boolean = false;
-
   sort(key: string) {
     this.sortKey = key;
     this.reverse = !this.reverse;
@@ -66,11 +65,9 @@ export class CustomerTableComponent implements OnInit {
     this.fetchCustomers();
   }
 
-  errorMessage: any;
-  
+  errorMessage: any;  
   deleteById(id: string) {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.customerService.remove(id).subscribe({
